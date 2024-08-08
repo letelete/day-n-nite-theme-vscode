@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate White and White Night themes."""
+"""Generate Day 'n' Nite Light and Day 'n' Nite Dark themes."""
 
 from __future__ import annotations
 from copy import deepcopy
@@ -70,7 +70,7 @@ class Color(object):
 
 
 class ColorSplit(object):
-    """Contains colors for White and White Night themes.
+    """Contains colors for Light and Dark Day 'n' Nite themes.
 
     Args:
         white (Union[str, ColorSplit]): The White theme color from an hexadecimal
@@ -153,10 +153,9 @@ def dump(night: bool = False):
         night (bool, optional): Wether dump for the normal theme or its night version.
             Defaults to False.
     """
-    filepath = "themes/White"
-    if night:
-        filepath += "-Night"
-    filepath += "-color-theme.json"
+    filepath = "themes/Day-n-nite-{}-color-theme.json".format(
+        "Dark" if night else "Light",
+    )
 
     with open(filepath, "w") as f:
         defs = deepcopy(definitions.definitions)

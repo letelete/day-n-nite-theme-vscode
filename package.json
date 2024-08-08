@@ -1,22 +1,28 @@
 {
-    "name": "white",
-    "displayName": "White",
-    "description": "Minimalist monochrome theme",
+    "name": "day-n-nite",
+    "displayName": "Day 'n' Nite",
+    "description": "A minimalist monochrome theme. Tailored for optimal focus and comfort.",
     "keywords": [
-        "white",
-        "theme",
+        "day",
         "night",
+        "nite",
+        "white",
+        "black",
+        "dark",
+        "theme",
         "minimal",
-        "monochrome"
+        "monochrome",
+        "wcag",
+        "accessibility"
     ],
-    "version": "1.3.6",
-    "publisher": "arthurwhite",
+    "version": "0.0.1-alpha.1",
+    "publisher": "brunokawka",
     "author": {
-        "name": "Arthur White"
+        "name": "Bruno Kawka"
     },
     "icon": "icon.png",
     "engines": {
-        "vscode": "^1.20.0"
+        "vscode": "^1.92.0"
     },
     "categories": [
         "Themes"
@@ -26,23 +32,23 @@
         "theme": "dark"
     },
     "bugs": {
-        "url": "https://github.com/arthurwhite/white-theme-vscode/issues"
+        "url": "https://github.com/letelete/day-n-nite-theme-vscode/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/arthurwhite/white-theme-vscode"
+        "url": "https://github.com/letelete/day-n-nite-theme-vscode"
     },
     "contributes": {
         "themes": [
             {
-                "label": "White",
+                "label": "Day 'n' Nite (Light)",
                 "uiTheme": "vs",
-                "path": "./themes/White-color-theme.json"
+                "path": "./themes/Day-n-nite-light-color-theme.json"
             },
             {
-                "label": "White Night",
+                "label": "Day 'n' Nite (Dark)",
                 "uiTheme": "vs-dark",
-                "path": "./themes/White-Night-color-theme.json"
+                "path": "./themes/Day-n-nite-dark-color-theme.json"
             }
         ]
     },
