@@ -16,7 +16,7 @@ After some weeks away from noisy and inconsistent colorization, you'll start to 
 
 ### Day 'n' Nite.
 
-After sunset, the Night version saves you from eye strain and improves the quality of your sleep.
+After sunset, the Nite version saves you from eye strain and improves the quality of your sleep.
 The [NightSwitch](https://marketplace.visualstudio.com/items?itemName=gharveymn.nightswitch) ([Lite](https://marketplace.visualstudio.com/items?itemName=gharveymn.nightswitch-lite)) extension can do the switch for you, every day on time.
 
 ## Screenshots
