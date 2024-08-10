@@ -53,7 +53,8 @@
         ]
     },
     "scripts": {
-        "build": "./build.py"
+        "build": "./build.py",
+        "package": "pnpm build && vsce package"
     },
     "prettier": {
         "arrowParens": "always",

@@ -1,238 +1,239 @@
 """Themes color definitions."""
 
 from build import ColorSplit
+from colors import Colors
 
-# Colors layer 1
 
-colorNone = ColorSplit("#000000").set_alpha(0)
-colorWhite = ColorSplit("#ffffff")
-colorBlack = ColorSplit("#000000")
+class Components:
+    transparent = ColorSplit(Colors.black).with_alpha(0)
 
-colorGray_25 = ColorSplit("#f0f0f0")
-colorGray_50 = ColorSplit("#dedede")
-colorGray_100 = ColorSplit("#1e1d27")
-colorGray_150 = ColorSplit("#9e9e9e")
-colorGray_200 = ColorSplit("#999999")
-colorGray_300 = ColorSplit("#616161")
-colorGray_350 = ColorSplit("#666666")
-colorGray_400 = ColorSplit("#2e2e37")
-colorGray_500 = ColorSplit("#a8a8b1")
-colorGray_600 = ColorSplit("#212121")
-colorGray_700 = ColorSplit("#1d1d1d")
+    background = ColorSplit(Colors.neutral_50, Colors.neutral_950)
+    background_foreground = ColorSplit(Colors.slate_950, Colors.slate_50)
+    background_foregroundPrimary = ColorSplit(Colors.slate_800, Colors.slate_200)
+    background_foregroundSecondary = ColorSplit(Colors.slate_500, Colors.slate_600)
+    background_foregroundHint = ColorSplit(Colors.slate_400, Colors.slate_700)
 
-# TODO:
-colorGray_400OnBlack = ColorSplit("#65696e", colorGray_400)
+    backgroundMuted = ColorSplit(Colors.slate_200, Colors.slate_500)
+    backgroundMuted_foreground = ColorSplit(Colors.slate_950, Colors.slate_50)
+    backgroundMuted_foregroundPrimary = ColorSplit(Colors.slate_800, Colors.slate_100)
+    backgroundMuted_foregroundSecondary = ColorSplit(Colors.slate_500, Colors.slate_300)
+    backgroundMuted_foregroundHint = ColorSplit(Colors.slate_300, Colors.slate_700)
 
-colorPurple = ColorSplit("#7d46fc")
-colorBlue = ColorSplit("#004bff")
-colorCyan = ColorSplit("#00d2ff")
-colorGreen = ColorSplit("#00ff68")
-colorYellow = ColorSplit("#ffca00")
-colorOrange = ColorSplit("#ff9900")
-colorRed = ColorSplit("#ff0032")
+    backgroundContrast = ColorSplit(Colors.neutral_300, Colors.neutral_700)
+    backgroundContrast_foreground = ColorSplit(Colors.slate_950, Colors.slate_50)
+    backgroundContrastHighlight = ColorSplit(
+        Colors.neutral_300, Colors.neutral_700
+    ).with_alpha(0.1)
 
-# Colors layer 2
+    accent = ColorSplit(Colors.green_600, Colors.purple_600)
+    accent_foreground = Colors.slate_50
 
-colorBackground = ColorSplit(colorWhite, colorBlack)
-colorBackground_foreground = ColorSplit(colorGray_600, colorGray_50)
-colorBackground_foregroundSecondary = ColorSplit(colorGray_350, colorGray_200)
-colorBackground_foregroundHint = ColorSplit(colorGray_150, colorGray_300)
+    accentHighlight = accent.with_alpha(0.15, 0.25)
+    accentHighlightStrong = accent.with_alpha(0.3, 0.5)
+    accentHighlightLight = accent.with_alpha(0.05, 0.08)
 
-colorBackgroundNegative = ColorSplit(colorBlack, colorWhite)
-colorBackgroundNegative_foreground = ColorSplit(colorGray_50, colorGray_600)
-colorBackgroundNegative_foregroundSecondary = ColorSplit(colorGray_200, colorGray_350)
-colorBackgroundNegative_foregroundHint = ColorSplit(colorGray_300, colorGray_150)
+    added = ColorSplit(Colors.lime_300, Colors.lime_400)
+    addedHighlight = added.with_alpha(0.1, 0.2)
+    deleted = ColorSplit(Colors.red_300, Colors.red_400)
+    deletedHighlight = deleted.with_alpha(0.1, 0.2)
 
-colorBackgroundContrast = ColorSplit(colorGray_25, colorGray_700)
-colorBackgroundContrast_foreground = ColorSplit(colorGray_700, colorGray_150)
+    error = ColorSplit(Colors.red_500, Colors.red_600)
 
-colorBackgroundContrastTransparent = ColorSplit(colorBlack, colorWhite).set_alpha(0.1)
+    warning = ColorSplit(Colors.orange_500, Colors.orange_400)
+    warning_foreground = Colors.black
 
-colorPrimary = ColorSplit(colorBlue, colorPurple)
-colorPrimaryNegative = colorWhite
-colorPrimaryHighlight = ColorSplit("#0064ff", colorPrimary).set_alpha(0.15, 0.25)
-colorPrimaryHighlightStrong = colorPrimaryHighlight.with_alpha(0.3, 0.5)
-colorPrimaryHighlightLight = colorPrimaryHighlight.with_alpha(0.05, 0.08)
+    find = ColorSplit(Colors.yellow_400, Colors.amber_400).with_alpha(0.6)
+    findHighlight = find.with_alpha(0.3)
 
-colorAdded = colorGreen
-colorAddedHighlight = colorAdded.with_alpha(0.1, 0.2)
-colorDeleted = colorRed
-colorDeletedHighlight = colorDeleted.with_alpha(0.1, 0.2)
+    stackFocused = warning.with_alpha(0.6)
+    stack = warning.with_alpha(0.3)
+    border = ColorSplit(Colors.slate_200, Colors.slate_800)
 
-colorError = colorRed
+    ansiBlack = backgroundMuted
+    ansiBlue = Colors.blue_500
+    ansiBrightBlack = backgroundMuted
+    ansiBrightBlue = Colors.blue_400
+    ansiBrightCyan = Colors.cyan_400
+    ansiBrightGreen = Colors.green_400
+    ansiBrightMagenta = Colors.fuchsia_400
+    ansiBrightRed = Colors.red_400
+    ansiBrightWhite = Colors.white
+    ansiBrightYellow = Colors.yellow_400
+    ansiCyan = Colors.cyan_500
+    ansiGreen = Colors.green_500
+    ansiMagenta = Colors.fuchsia_50
+    ansiRed = Colors.red_500
+    ansiWhite = Colors.white
+    ansiYellow = Colors.yellow_500
+    ansiForeground = backgroundMuted
 
-colorWarning = colorOrange
-colorWarning_foreground = colorBlack
+    todo = Colors.pink_500
 
-colorFind = colorYellow.with_alpha(0.6)
-colorFindHighlight = colorFind.with_alpha(0.3)
-
-colorStackFocused = colorOrange.with_alpha(0.6)
-colorStack = colorOrange.with_alpha(0.3)
-
-colorBorder = ColorSplit(colorGray_300, colorGray_100)
 
 # Theme definitions
 
 definitions = {
     "colors": {
-        "activityBar.background": colorBackground,
-        "activityBar.border": colorNone,
-        "activityBar.foreground": colorBackground_foregroundSecondary,
-        "activityBarBadge.background": colorBackgroundContrast,
-        "activityBarBadge.foreground": colorBackgroundContrast_foreground,
-        "badge.background": colorBackgroundNegative,
-        "badge.foreground": colorBackgroundNegative_foreground,
-        "button.background": colorPrimary,
-        "button.foreground": colorPrimaryNegative,
-        "contrastBorder": colorNone,
-        "debugToolBar.background": colorBackgroundContrast,
-        "diffEditor.insertedTextBackground": colorAddedHighlight,
-        "diffEditor.removedTextBackground": colorDeletedHighlight,
-        "dropdown.background": colorBackgroundContrast,
-        "dropdown.border": colorBorder,
-        "dropdown.foreground": colorBackground_foreground,
-        "editor.background": colorBackground,
-        "editor.findMatchBackground": colorFind,
-        "editor.findMatchHighlightBackground": colorFindHighlight,
-        "editor.focusedStackFrameHighlightBackground": colorStackFocused,
-        "editor.foreground": colorBackground_foreground,
-        "editor.lineHighlightBackground": colorPrimaryHighlightLight,
-        "editor.lineHighlightBorder": colorNone,
-        "editor.selectionBackground": colorPrimaryHighlightStrong,
-        "editor.selectionForeground": colorBackground_foreground,
-        "editor.selectionHighlightBorder": ColorSplit(colorNone, colorPrimaryHighlight),
-        "editor.stackFrameHighlightBackground": colorStack,
-        "editor.wordHighlightBackground": colorPrimaryHighlight,
-        "editor.wordHighlightStrongBackground": colorPrimaryHighlightStrong,
-        "editorBracketMatch.background": colorPrimaryHighlightStrong,
-        "editorBracketMatch.border": colorNone,
-        "editorCursor.foreground": colorPrimary,
-        "editorError.foreground": colorError,
-        "editorGroup.border": colorBackgroundContrast,
-        "editorGroupHeader.tabsBackground": colorBackground,
-        "editorGroupHeader.tabsBorder": colorNone,
-        "editorGutter.addedBackground": colorAdded,
-        "editorGutter.deletedBackground": colorDeleted,
-        "editorGutter.modifiedBackground": colorBackgroundNegative,
-        "editorIndentGuide.background": colorBackgroundContrast,
-        "editorLineNumber.activeForeground": colorBackground_foregroundSecondary,
-        "editorLineNumber.foreground": ColorSplit("#ebf0f5", colorGray_100),
-        "editorLink.activeForeground": colorPrimary,
-        "editorOverviewRuler.addedForeground": colorNone,
-        "editorOverviewRuler.border": colorNone,
-        "editorOverviewRuler.bracketMatchForeground": colorPrimaryHighlightStrong,
-        "editorOverviewRuler.errorForeground": colorError,
-        "editorOverviewRuler.findMatchForeground": colorFind,
-        "editorOverviewRuler.modifiedForeground": colorBackground_foreground,
-        "editorOverviewRuler.selectionHighlightForeground": colorPrimaryHighlightStrong,
-        "editorOverviewRuler.warningForeground": colorWarning,
-        "editorOverviewRuler.wordHighlightForeground": colorPrimaryHighlight,
-        "editorOverviewRuler.wordHighlightStrongForeground": colorPrimaryHighlightStrong,
-        "editorRuler.foreground": colorBackgroundContrast,
-        "editorSuggestWidget.foreground": colorBackground_foreground,
-        "editorWarning.foreground": colorWarning,
-        "editorWidget.background": colorBackgroundContrast,
-        "editorWidget.border": colorBorder,
-        "errorForeground": colorError,
-        "extensionButton.prominentBackground": colorPrimary,
-        "extensionButton.prominentForeground": colorPrimaryNegative,
-        "extensionButton.prominentHoverBackground": colorPrimary,
-        "focusBorder": colorBorder,
-        "foreground": colorBackground_foreground,
-        "gitDecoration.ignoredResourceForeground": colorBackground_foregroundSecondary,
-        "gitDecoration.modifiedResourceForeground": colorBackground_foreground,
-        "gitDecoration.untrackedResourceForeground": colorBackground_foreground,
-        "input.background": colorBackgroundContrast,
-        "input.border": colorBorder,
-        "input.foreground": colorBackgroundContrast_foreground,
-        "input.placeholderForeground": colorBackgroundNegative_foregroundHint,
-        "inputOption.activeBackground": colorBackgroundContrast,
-        "inputOption.activeBorder": colorBackgroundContrast_foreground,
-        "inputOption.activeForeground": colorBackgroundContrast_foreground,
-        "list.activeSelectionBackground": colorBackgroundNegative,
-        "list.activeSelectionForeground": colorBackgroundNegative_foreground,
-        "list.dropBackground": colorPrimaryHighlightStrong,
-        "list.focusBackground": colorPrimaryHighlight,
-        "list.focusForeground": colorBackgroundNegative,
-        "list.highlightForeground": colorBackgroundNegative,
-        "list.hoverBackground": colorBackgroundContrast,
-        "list.inactiveSelectionBackground": colorBackgroundContrast,
-        "list.inactiveSelectionForeground": colorBackgroundNegative,
-        "panel.background": colorBackgroundContrast,
-        "panel.border": colorNone,
-        "panelTitle.activeBorder": colorBackground_foregroundSecondary,
-        "peekView.border": colorBackgroundNegative,
-        "peekViewEditor.background": colorNone,
-        "peekViewEditor.matchHighlightBackground": colorFind,
-        "peekViewResult.background": colorNone,
-        "peekViewResult.fileForeground": colorBackgroundNegative_foregroundSecondary,
-        "peekViewResult.lineForeground": colorBackgroundNegative_foregroundSecondary,
-        "peekViewResult.matchHighlightBackground": colorFind,
-        "peekViewResult.selectionBackground": colorBackgroundNegative,
-        "peekViewResult.selectionForeground": colorBackground_foreground,
-        "peekViewTitle.background": colorNone,
-        "peekViewTitleDescription.foreground": colorBackground_foregroundSecondary,
-        "peekViewTitleLabel.foreground": colorBackgroundNegative,
-        "progressBar.background": colorPrimary,
-        "scrollbar.shadow": colorNone,
-        "scrollbarSlider.background": colorBackgroundContrastTransparent,
-        "scrollbarSlider.hoverBackground": colorBackgroundNegative,
-        "sideBar.background": colorBackground,
-        "sideBar.foreground": colorBackground_foreground,
-        "sideBarSectionHeader.background": colorBackgroundContrast,
-        "sideBarSectionHeader.foreground": colorBackgroundContrast_foreground,
-        "sideBarTitle.foreground": colorBackground_foreground,
-        "statusBar.background": colorBackground,
-        "statusBar.debuggingBackground": colorWarning,
-        "statusBar.debuggingForeground": colorWarning_foreground,
-        "statusBar.foreground": colorBackground_foreground,
-        "statusBar.noFolderBackground": colorBackground,
-        "tab.activeBackground": colorBackgroundNegative,
-        "tab.activeForeground": colorBackground,
-        "tab.activeModifiedBorder": colorNone,
-        "tab.border": colorNone,
-        "tab.inactiveBackground": colorNone,
-        "tab.inactiveForeground": colorBackground_foregroundSecondary,
-        "tab.inactiveModifiedBorder": colorBackgroundNegative,
-        "terminal.ansiBlack": colorBackgroundNegative,
-        "terminal.ansiBlue": colorBlue,
-        "terminal.ansiBrightBlack": colorBackgroundNegative,
-        "terminal.ansiBrightBlue": colorBlue,
-        "terminal.ansiBrightCyan": colorCyan,
-        "terminal.ansiBrightGreen": colorGreen,
-        "terminal.ansiBrightMagenta": colorPurple,
-        "terminal.ansiBrightRed": colorRed,
-        "terminal.ansiBrightWhite": colorWhite,
-        "terminal.ansiBrightYellow": colorYellow,
-        "terminal.ansiCyan": colorCyan,
-        "terminal.ansiGreen": colorGreen,
-        "terminal.ansiMagenta": colorPurple,
-        "terminal.ansiRed": colorRed,
-        "terminal.ansiWhite": colorWhite,
-        "terminal.ansiYellow": colorYellow,
-        "terminal.foreground": colorBackgroundNegative,
-        "terminal.selectionBackground": colorPrimaryHighlightStrong,
-        "terminalCursor.foreground": colorPrimary,
-        "textLink.activeForeground": colorPrimary,
-        "textLink.foreground": colorPrimary,
-        "titleBar.activeBackground": colorBackground,
-        "titleBar.activeForeground": colorGray_500,
-        "titleBar.inactiveBackground": colorBackground,
-        "titleBar.inactiveForeground": colorBackground_foregroundSecondary,
-        "welcomePage.buttonBackground": colorBackgroundContrast,
-        "welcomePage.buttonHoverBackground": colorPrimaryHighlight,
-        "widget.shadow": colorNone,
+        "activityBar.background": Components.background,
+        "activityBar.border": Components.transparent,
+        "activityBar.foreground": Components.background_foregroundSecondary,
+        "activityBarBadge.background": Components.backgroundContrast,
+        "activityBarBadge.foreground": Components.backgroundContrast_foreground,
+        "badge.background": Components.backgroundMuted,
+        "badge.foreground": Components.backgroundMuted_foregroundPrimary,
+        "button.background": Components.accent,
+        "button.foreground": Components.accent_foreground,
+        "contrastBorder": Components.transparent,
+        "debugToolBar.background": Components.backgroundContrast,
+        "diffEditor.insertedTextBackground": Components.addedHighlight,
+        "diffEditor.removedTextBackground": Components.deletedHighlight,
+        "dropdown.background": Components.backgroundContrast,
+        "dropdown.border": Components.border,
+        "dropdown.foreground": Components.background_foregroundPrimary,
+        "editor.background": Components.background,
+        "editor.findMatchBackground": Components.find,
+        "editor.findMatchHighlightBackground": Components.findHighlight,
+        "editor.focusedStackFrameHighlightBackground": Components.stackFocused,
+        "editor.foreground": Components.background_foregroundPrimary,
+        "editor.lineHighlightBackground": Components.accentHighlightLight,
+        "editor.lineHighlightBorder": Components.transparent,
+        "editor.selectionBackground": Components.accentHighlightStrong,
+        "editor.selectionForeground": Components.background_foregroundPrimary,
+        "editor.selectionHighlightBorder": Components.todo,
+        "editor.stackFrameHighlightBackground": Components.stack,
+        "editor.wordHighlightBackground": Components.accentHighlight,
+        "editor.wordHighlightStrongBackground": Components.accentHighlightStrong,
+        "editorBracketMatch.background": Components.accentHighlightStrong,
+        "editorBracketMatch.border": Components.transparent,
+        "editorCursor.foreground": Components.accent,
+        "editorError.foreground": Components.error,
+        "editorGroup.border": Components.backgroundContrast,
+        "editorGroupHeader.tabsBackground": Components.background,
+        "editorGroupHeader.tabsBorder": Components.transparent,
+        "editorGutter.addedBackground": Components.added,
+        "editorGutter.deletedBackground": Components.deleted,
+        "editorGutter.modifiedBackground": Components.backgroundMuted,
+        "editorIndentGuide.background": Components.backgroundContrast,
+        "editorLineNumber.activeForeground": Components.background_foregroundPrimary,
+        "editorLineNumber.foreground": Components.background_foregroundHint,
+        "editorLink.activeForeground": Components.accent,
+        "editorOverviewRuler.addedForeground": Components.transparent,
+        "editorOverviewRuler.border": Components.transparent,
+        "editorOverviewRuler.bracketMatchForeground": Components.accentHighlightStrong,
+        "editorOverviewRuler.errorForeground": Components.error,
+        "editorOverviewRuler.findMatchForeground": Components.find,
+        "editorOverviewRuler.modifiedForeground": Components.background_foregroundPrimary,
+        "editorOverviewRuler.selectionHighlightForeground": Components.accentHighlightStrong,
+        "editorOverviewRuler.warningForeground": Components.warning,
+        "editorOverviewRuler.wordHighlightForeground": Components.accentHighlight,
+        "editorOverviewRuler.wordHighlightStrongForeground": Components.accentHighlightStrong,
+        "editorRuler.foreground": Components.backgroundContrast,
+        "editorSuggestWidget.foreground": Components.background_foregroundPrimary,
+        "editorWarning.foreground": Components.warning,
+        "editorWidget.background": Components.backgroundContrast,
+        "editorWidget.border": Components.border,
+        "errorForeground": Components.error,
+        "extensionButton.prominentBackground": Components.accent,
+        "extensionButton.prominentForeground": Components.accent_foreground,
+        "extensionButton.prominentHoverBackground": Components.accent,
+        "focusBorder": Components.border,
+        "foreground": Components.background_foregroundPrimary,
+        "gitDecoration.ignoredResourceForeground": Components.background_foregroundSecondary,
+        "gitDecoration.modifiedResourceForeground": Components.background_foregroundPrimary,
+        "gitDecoration.untrackedResourceForeground": Components.background_foregroundPrimary,
+        "input.background": Components.backgroundContrast,
+        "input.border": Components.border,
+        "input.foreground": Components.backgroundContrast_foreground,
+        "input.placeholderForeground": Components.backgroundMuted_foregroundHint,
+        "inputOption.activeBackground": Components.backgroundContrast,
+        "inputOption.activeBorder": Components.backgroundContrast_foreground,
+        "inputOption.activeForeground": Components.backgroundContrast_foreground,
+        "list.activeSelectionBackground": Components.backgroundMuted,
+        "list.activeSelectionForeground": Components.backgroundMuted_foregroundPrimary,
+        "list.dropBackground": Components.accentHighlightStrong,
+        "list.focusBackground": Components.accentHighlight,
+        "list.focusForeground": Components.backgroundMuted,
+        "list.highlightForeground": Components.backgroundMuted,
+        "list.hoverBackground": Components.backgroundContrast,
+        "list.inactiveSelectionBackground": Components.backgroundContrast,
+        "list.inactiveSelectionForeground": Components.backgroundMuted,
+        "panel.background": Components.backgroundContrast,
+        "panel.border": Components.transparent,
+        "panelTitle.activeBorder": Components.background_foregroundSecondary,
+        "peekView.border": Components.backgroundMuted,
+        "peekViewEditor.background": Components.transparent,
+        "peekViewEditor.matchHighlightBackground": Components.find,
+        "peekViewResult.background": Components.transparent,
+        "peekViewResult.fileForeground": Components.backgroundMuted_foregroundSecondary,
+        "peekViewResult.lineForeground": Components.backgroundMuted_foregroundSecondary,
+        "peekViewResult.matchHighlightBackground": Components.find,
+        "peekViewResult.selectionBackground": Components.backgroundMuted,
+        "peekViewResult.selectionForeground": Components.background_foregroundPrimary,
+        "peekViewTitle.background": Components.transparent,
+        "peekViewTitleDescription.foreground": Components.background_foregroundSecondary,
+        "peekViewTitleLabel.foreground": Components.backgroundMuted,
+        "progressBar.background": Components.accent,
+        "scrollbar.shadow": Components.transparent,
+        "scrollbarSlider.background": Components.backgroundContrastHighlight,
+        "scrollbarSlider.hoverBackground": Components.backgroundMuted,
+        "sideBar.background": Components.background,
+        "sideBar.foreground": Components.background_foregroundPrimary,
+        "sideBarSectionHeader.background": Components.backgroundContrast,
+        "sideBarSectionHeader.foreground": Components.backgroundContrast_foreground,
+        "sideBarTitle.foreground": Components.background_foregroundPrimary,
+        "statusBar.background": Components.background,
+        "statusBar.debuggingBackground": Components.warning,
+        "statusBar.debuggingForeground": Components.warning_foreground,
+        "statusBar.foreground": Components.background_foregroundPrimary,
+        "statusBar.noFolderBackground": Components.background,
+        "tab.activeBackground": Components.backgroundMuted,
+        "tab.activeForeground": Components.backgroundMuted_foregroundPrimary,
+        "tab.activeModifiedBorder": Components.transparent,
+        "tab.border": Components.transparent,
+        "tab.inactiveBackground": Components.transparent,
+        "tab.inactiveForeground": Components.background_foregroundSecondary,
+        "tab.inactiveModifiedBorder": Components.backgroundMuted,
+        "terminal.ansiBlack": Components.ansiBlack,
+        "terminal.ansiBlue": Components.ansiBlue,
+        "terminal.ansiBrightBlack": Components.ansiBrightBlack,
+        "terminal.ansiBrightBlue": Components.ansiBrightBlue,
+        "terminal.ansiBrightCyan": Components.ansiBrightCyan,
+        "terminal.ansiBrightGreen": Components.ansiBrightGreen,
+        "terminal.ansiBrightMagenta": Components.ansiBrightMagenta,
+        "terminal.ansiBrightRed": Components.ansiBrightRed,
+        "terminal.ansiBrightWhite": Components.ansiBrightWhite,
+        "terminal.ansiBrightYellow": Components.ansiBrightYellow,
+        "terminal.ansiCyan": Components.ansiCyan,
+        "terminal.ansiGreen": Components.ansiGreen,
+        "terminal.ansiMagenta": Components.ansiMagenta,
+        "terminal.ansiRed": Components.ansiRed,
+        "terminal.ansiWhite": Components.ansiWhite,
+        "terminal.ansiYellow": Components.ansiYellow,
+        "terminal.foreground": Components.ansiForeground,
+        "terminal.selectionBackground": Components.accentHighlightStrong,
+        "terminalCursor.foreground": Components.accent,
+        "textLink.activeForeground": Components.accent,
+        "textLink.foreground": Components.accent,
+        "titleBar.activeBackground": Components.background,
+        "titleBar.activeForeground": Components.background_foregroundPrimary,
+        "titleBar.inactiveBackground": Components.background,
+        "titleBar.inactiveForeground": Components.background_foregroundHint,
+        "welcomePage.buttonBackground": Components.accent,
+        "welcomePage.buttonHoverBackground": Components.accentHighlight,
+        "widget.shadow": Components.transparent,
     },
     "tokenColors": [
         {
             "scope": ["comment", "string.quoted.docstring"],
-            "settings": {"foreground": colorBackground_foregroundSecondary},
+            "settings": {"foreground": Components.background_foregroundHint},
         },
-        {"scope": ["string"], "settings": {"foreground": colorGray_500}},
+        {
+            "scope": ["string"],
+            "settings": {"foreground": Components.background_foregroundSecondary},
+        },
         {
             "scope": ["punctuation.definition.string", "storage.type.string.python"],
-            "settings": {"foreground": colorBackgroundNegative},
+            "settings": {"foreground": Components.background_foregroundPrimary},
         },
         {
             "scope": [
@@ -282,7 +283,10 @@ definitions = {
                 "storage.type.type",
                 "support.type.object.module",
             ],
-            "settings": {"fontStyle": "bold"},
+            "settings": {
+                "foreground": Components.background_foreground,
+                "fontStyle": "bold",
+            },
         },
     ],
 }
