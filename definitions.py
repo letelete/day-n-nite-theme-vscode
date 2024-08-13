@@ -426,7 +426,7 @@ definitions = {
         },
         {
             "scope": ["string"],
-            "settings": {"foreground": Components.background_foregroundPrimary},
+            "settings": {"foreground": Components.background_foregroundSecondary},
         },
         {
             "scope": ["punctuation.definition.string", "storage.type.string.python"],

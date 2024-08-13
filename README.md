@@ -1,3 +1,5 @@
+<p align="center"><img src="./icon.png" alt="Day 'n' Nite"></p>
+
 Minimalist monochrome theme for [Visual Studio Code](https://code.visualstudio.com).
 
 `version: 0.0.1-alpha`
