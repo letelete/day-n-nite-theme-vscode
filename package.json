@@ -1,64 +1,64 @@
 {
-    "name": "day-n-nite",
-    "displayName": "Day 'n' Nite",
-    "description": "A minimalist monochrome theme. Tailored for optimal focus and comfort.",
-    "keywords": [
-        "day",
-        "night",
-        "nite",
-        "white",
-        "black",
-        "dark",
-        "theme",
-        "minimal",
-        "monochrome",
-        "wcag",
-        "accessibility"
-    ],
-    "version": "0.0.1-alpha.1",
-    "publisher": "brunokawka",
-    "author": {
-        "name": "Bruno Kawka"
-    },
-    "icon": "icon.png",
-    "engines": {
-        "vscode": "^1.92.0"
-    },
-    "categories": [
-        "Themes"
-    ],
-    "galleryBanner": {
-        "color": "#000",
-        "theme": "dark"
-    },
-    "bugs": {
-        "url": "https://github.com/letelete/day-n-nite-theme-vscode/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/letelete/day-n-nite-theme-vscode"
-    },
-    "contributes": {
-        "themes": [
-            {
-                "label": "Day 'n' Nite (Light)",
-                "uiTheme": "vs",
-                "path": "./themes/Day-n-nite-light-color-theme.json"
-            },
-            {
-                "label": "Day 'n' Nite (Dark)",
-                "uiTheme": "vs-dark",
-                "path": "./themes/Day-n-nite-dark-color-theme.json"
-            }
-        ]
-    },
-    "scripts": {
-        "build": "./build.py",
-        "package": "pnpm build && vsce package"
-    },
-    "prettier": {
-        "arrowParens": "always",
-        "tabWidth": 4,
-        "trailingComma": "all"
-    }
+  "name": "day-n-nite",
+  "displayName": "Day 'n' Nite",
+  "description": "A minimalist monochrome theme. Tailored for optimal focus and comfort.",
+  "keywords": [
+    "day",
+    "night",
+    "nite",
+    "white",
+    "black",
+    "dark",
+    "theme",
+    "minimal",
+    "monochrome",
+    "wcag",
+    "accessibility"
+  ],
+  "version": "0.0.1-alpha.1",
+  "publisher": "brunokawka",
+  "author": {
+    "name": "Bruno Kawka"
+  },
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "galleryBanner": {
+    "color": "#000",
+    "theme": "dark"
+  },
+  "bugs": {
+    "url": "https://github.com/letelete/day-n-nite-theme-vscode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/letelete/day-n-nite-theme-vscode"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Day 'n' Nite: Light",
+        "uiTheme": "vs",
+        "path": "./themes/Day-n-nite-light-color-theme.json"
+      },
+      {
+        "label": "Day 'n' Nite: Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Day-n-nite-dark-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "./build.py",
+    "package": "pnpm build && vsce package"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "tabWidth": 4,
+    "trailingComma": "all"
+  }
 }

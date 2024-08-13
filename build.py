@@ -58,7 +58,7 @@ class Color(object):
         Returns:
             str: The hexadecimal representation.
         """
-        s = "{:06x}".format(self._rgb)
+        s = self.to_hex()
         if self.alpha < 1:
             s += "{:02x}".format(int(self.alpha * 255))
         if s[0] == s[1] and s[2] == s[3] and s[4] == s[5]:
@@ -67,6 +67,9 @@ class Color(object):
             elif s[6] == s[7]:
                 s = s[0] + s[2] + s[4] + s[6]
         return "#" + s
+
+    def to_hex(self) -> str:
+        return "{:06x}".format(self._rgb)
 
 
 class ColorSplit(object):
@@ -124,6 +127,14 @@ class ColorSplit(object):
         """
         color_split = deepcopy(self)
         color_split.set_alpha(white, white_night)
+        return color_split
+
+    def to_reversed(self) -> ColorSplit:
+        """Copy colors split and set values of colors in reversed order."""
+        color_split_reversed = ColorSplit(
+            self.white_night.to_hex(), self.white.to_hex()
+        )
+        color_split = deepcopy(color_split_reversed)
         return color_split
 
 

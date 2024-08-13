@@ -6,5 +6,8 @@
     "python.formatting.provider": "black",
     "python.linting.mypyEnabled": true,
     "python.pythonPath": "venv/bin/python",
-    "python.venvFolders": ["venv"]
+    "python.venvFolders": [
+        "venv"
+    ],
+    "python.analysis.typeCheckingMode": "basic"
 }

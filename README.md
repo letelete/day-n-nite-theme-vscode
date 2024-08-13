@@ -1,6 +1,6 @@
-⚠️ In-progress. ⚠️
-
 Minimalist monochrome theme for [Visual Studio Code](https://code.visualstudio.com).
+
+`version: 0.0.1-alpha`
 
 ## Benefits
 
@@ -21,4 +21,4 @@ The [NightSwitch](https://marketplace.visualstudio.com/items?itemName=gharveymn.
 
 ## Screenshots
 
-TODO
+> TODO
