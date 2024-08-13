@@ -1,4 +1,4 @@
-<p align="center"><img src="./icon.png" alt="Day 'n' Nite"></p>
+<p align="center"><img src="./resources/icon.png" alt="Day 'n' Nite"></p>
 
 # Day 'n' Nite
 
