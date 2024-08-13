@@ -14,34 +14,34 @@ class Components:
 
     info = ColorSplit(Colors.blue_500, Colors.blue_500)
 
-    accent = ColorSplit(Colors.green_600, Colors.purple_600)
+    accent = ColorSplit(Colors.fuchsia_600, Colors.purple_600)
     accent_foreground = Colors.slate_50
     accentHighlight = accent.with_alpha(0.15, 0.25)
     accentHighlightLight = accent.with_alpha(0.8, 0.8)
 
-    accentMuted = ColorSplit(Colors.green_700, Colors.purple_500)
+    accentMuted = ColorSplit(Colors.fuchsia_700, Colors.purple_500)
     accentMuted_foreground = Colors.slate_50
     accentMutedHighlight = accentMuted.with_alpha(0.15, 0.25)
     accentMutedHighlightLight = accentMuted.with_alpha(0.8, 0.8)
 
-    find = ColorSplit(Colors.yellow_500, Colors.yellow_500)
-    findHighlight_200 = find.with_alpha(0.05, 0.05)
-    findHighlight_300 = find.with_alpha(0.1, 0.1)
+    find = accent
+    findHighlight_200 = find.with_alpha(0.1, 0.1)
+    findHighlight_300 = find.with_alpha(0.15, 0.15)
     findHighlight_400 = find.with_alpha(0.3, 0.3)
     findHighlight_500 = find.with_alpha(0.45, 0.45)
     findHighlight_600 = find.with_alpha(0.6, 0.6)
 
     background = ColorSplit(Colors.white, Colors.black)
-    background_foreground = ColorSplit(Colors.slate_950, Colors.slate_50)
-    background_foregroundPrimary = ColorSplit(Colors.slate_800, Colors.slate_300)
-    background_foregroundSecondary = ColorSplit(Colors.slate_500, Colors.slate_500)
-    background_foregroundHint = ColorSplit(Colors.slate_400, Colors.slate_600)
+    background_foreground = ColorSplit(Colors.slate_950, Colors.neutral_50)
+    background_foregroundPrimary = ColorSplit(Colors.slate_800, Colors.neutral_300)
+    background_foregroundSecondary = ColorSplit(Colors.slate_500, Colors.neutral_500)
+    background_foregroundHint = ColorSplit(Colors.slate_400, Colors.neutral_600)
     background_foregroundError = error
     background_foregroundWarning = warning
     background_foregroundInfo = accent
-    background_foregroundOrnament = ColorSplit(Colors.slate_300, Colors.slate_800)
+    background_foregroundOrnament = ColorSplit(Colors.slate_300, Colors.neutral_800)
 
-    backgroundMuted = ColorSplit(Colors.neutral_200, Colors.neutral_900)
+    backgroundMuted = ColorSplit(Colors.neutral_200, Colors.neutral_950)
     backgroundMuted_foreground = background_foreground
     backgroundMuted_foregroundPrimary = background_foregroundPrimary
     backgroundMuted_foregroundSecondary = background_foregroundSecondary
@@ -139,7 +139,7 @@ definitions = {
         "activityBar.activeBackground": Components.backgroundContrast,
         # Side Bar
         "sideBar.background": Components.background,
-        "sideBar.foreground": Components.background_foreground,
+        "sideBar.foreground": Components.background_foregroundPrimary,
         "sideBarSectionHeader.background": Components.backgroundContrast,
         "sideBarSectionHeader.foreground": Components.backgroundContrast_foregroundPrimary,
         "sideBarSectionHeader.border": Components.transparent,
@@ -344,7 +344,7 @@ definitions = {
         "editor.wordHighlightStrongBorder": Components.transparent,
         "editor.wordHighlightBackground": Components.findHighlight_300,
         "editor.wordHighlightBorder": Components.transparent,
-        "editor.lineHighlightBackground": Components.backgroundContrast,
+        "editor.lineHighlightBackground": Components.backgroundMuted,
         "editor.lineHighlightBorder": Components.transparent,
         "editorLink.activeForeground": Components.find,
         "editorIndentGuide.background": Components.background_foregroundOrnament,
@@ -426,7 +426,7 @@ definitions = {
         },
         {
             "scope": ["string"],
-            "settings": {"foreground": Components.background_foregroundSecondary},
+            "settings": {"foreground": Components.background_foregroundPrimary},
         },
         {
             "scope": ["punctuation.definition.string", "storage.type.string.python"],
@@ -481,7 +481,7 @@ definitions = {
                 "support.type.object.module",
             ],
             "settings": {
-                "foreground": Components.background_foreground,
+                "foreground": Components.background_foregroundPrimary,
                 "fontStyle": "bold",
             },
         },
