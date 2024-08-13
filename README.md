@@ -25,4 +25,10 @@ The [NightSwitch](https://marketplace.visualstudio.com/items?itemName=gharveymn.
 
 ## Screenshots
 
-> TODO
+### Day 'n' Nite: Light
+
+<p align="center"><img src="./resources/screenshot-light.png" alt="Day 'n' Nite: Light screenshot"></p>
+
+### Day 'n' Nite: Dark
+
+<p align="center"><img src="./resources/screenshot-dark.png" alt="Day 'n' Nite: Dark screenshot"></p>

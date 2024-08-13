@@ -20,7 +20,7 @@
   "author": {
     "name": "Bruno Kawka"
   },
-  "icon": "icon.png",
+  "icon": "./resources/icon.png",
   "engines": {
     "vscode": "^1.92.0"
   },
